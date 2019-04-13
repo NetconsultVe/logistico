@@ -39,7 +39,7 @@
 
     $("select").html('<option value="" disabled selected>SELECCIONE UNA OPCIÓN</option>');
 
-    $("input, textarea, select).change(function(){
+    $("input, textarea, select").change(function(){
         $(this).css("border-color","#d2d6de");
         window.LoadVars[this["name"]] = this.value;
         if($(this).hasClass('OnlyNum')){
