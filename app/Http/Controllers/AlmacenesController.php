@@ -10,7 +10,7 @@ use App\lp_silo_almacenes;
 class AlmacenesController extends Controller
 {
 
-    public function new_Almacen(Request $a){
+    public function new_SiloAlmacen(Request $a){
         $Codigo = "Cod-001";
         $lp_silo = lp_silo_almacenes::create([
             'id_Silo' => $a->id_Silo,
@@ -21,7 +21,17 @@ class AlmacenesController extends Controller
            return $lp_silo;
     }
 
-    public function list_AlmacenTipo(){
+    public function list_SiloAlmacenUpdate(Request $a){
+        $str_Sql = "SELECT
+        lp_silo_almacenes.NombreAlmacen
+        FROM
+        lp_silo_almacenes
+        WHERE
+        lp_silo_almacenes.id = ".$a->id_Almacen;
+        return DB::select($str_Sql);
+    }
+
+    public function list_SiloAlmacenTipo(Request $a){
         $str_Sql = "SELECT
         lp_silo_almacenes_tipo.id,
         lp_silo_almacenes_tipo.TipoAlmacen AS Nombre
@@ -30,7 +40,7 @@ class AlmacenesController extends Controller
         return DB::select($str_Sql);
     }
 
-    public function list_Almacenes(Request $a){
+    public function list_SiloAlmacenes(Request $a){
         $str_Sql = "SELECT
         lp_silo_almacenes.id,
         lp_silo_almacenes.cod_Almacen,
@@ -46,5 +56,13 @@ class AlmacenesController extends Controller
         WHERE
                 lp_silo_almacenes.id_Silo = ".$a->id_Silo;
         return DB::select($str_Sql);
+    }
+
+    public function update_SiloAlmacen(Request $a){
+        $resp = DB::table('lp_silo_almacenes')->where('id', $a->id_Almacen)->update([
+            'NombreAlmacen' => $a->NameAlmacenUp,
+            'id_TipoAlmacen' => $a->id_TipoAlmacenUp
+        ]);
+        return $resp;
     }
 }

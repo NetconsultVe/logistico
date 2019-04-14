@@ -1,7 +1,7 @@
 ;(function(win){
 
     $("#cmb-silo").change(function(){
-        LoadFunctions.list_Almacenes();
+        LoadFunctions.list_SiloAlmacenes();
     })
 
 
@@ -11,24 +11,21 @@
             "#cmb-TipoAlmacen",
             "#txt_NameSilo"
         ])){return}
-        LoadFunctions.new_Almacen();
+        LoadFunctions.new_SiloAlmacen();
     })
 
-    $("#btnActualizarDistribuidora").click(function(){
+    $("#btnActualizarAlmacen").click(function(){
         if(ControlCheck([
-            "#txt_NameSiloUp",
-            "#txt_DireccionSiloUp",
-            "#txt_TelefonoSiloUp",
-            "#txt_EmailSiloUp"
+            "#cmb-TipoAlmacenUp",
+            "#txt_NameSiloUp"
         ])){return}
-        if(EmailCheck("#txt_EmailSiloUp")){return}
-        if(PhoneCheck("#txt_TelefonoSiloUp")){return}
-        LoadFunctions.update_Distribuidora();
+        LoadFunctions.update_SiloAlmacen();
     })
 
     $("#tableSilosRecarga").on("click", "#btn_EditarDistribuidora", function(){
-        LoadVars.id_Distribuidora = $(this)[0].firstChild.id;
-        LoadFunctions.list_DistribuidoraUpdate();
+        LoadVars.id_Almacen = $(this)[0].firstChild.id;
+        LoadVars.id_TipoAlmacen = LoadVars.array_list_Almacenes[LoadVars.id_Almacen];
+        LoadFunctions.list_SiloAlmacenUpdate();
     });
 
 })(window);

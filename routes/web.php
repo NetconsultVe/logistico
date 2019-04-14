@@ -136,10 +136,13 @@ route::post('entrega_PanaderiaDespacho', 'OrdenOperacionesController@entrega_Pan
 
 
 
-route::post('list_AlmacenTipo', 'AlmacenesController@list_AlmacenTipo');
-route::post('list_Almacenes', 'AlmacenesController@list_Almacenes');
-route::post('new_Almacen', 'AlmacenesController@new_Almacen');
+route::post('list_SiloAlmacenTipo', 'AlmacenesController@list_SiloAlmacenTipo');
+route::post('list_SiloAlmacenes', 'AlmacenesController@list_SiloAlmacenes');
+route::post('new_SiloAlmacen', 'AlmacenesController@new_SiloAlmacen');
+route::post('list_SiloAlmacenUpdate', 'AlmacenesController@list_SiloAlmacenUpdate');
+route::post('update_SiloAlmacen', 'AlmacenesController@update_SiloAlmacen');
 
 
 
 
+ 

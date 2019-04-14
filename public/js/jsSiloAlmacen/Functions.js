@@ -1,20 +1,20 @@
 ;(function(win){
-    LoadFunctions.new_Almacen = function(){
-        Ajax("new_Almacen", LoadVars, function(data){
+    LoadFunctions.new_SiloAlmacen = function(){
+        Ajax("new_SiloAlmacen", LoadVars, function(data){
             InitControl();
             LoadFunctions.list_Silo("cmb-silo");
-            LoadFunctions.list_AlmacenTipo("cmb-TipoAlmacen");
+            LoadFunctions.list_SiloAlmacenTipo("cmb-TipoAlmacen");
             $("#tableSilosRecarga").dataTable().fnDestroy();
             $("#tableSilosRecarga tbody").empty();
         }, true);
     }
 
-    LoadFunctions.list_Almacenes = function(){
-        Ajax("list_Almacenes", LoadVars, function(data){
+    LoadFunctions.list_SiloAlmacenes = function(){
+        Ajax("list_SiloAlmacenes", LoadVars, function(data){
             LoadVars.array_list_Almacenes = [];
             var strTd = "";
             for(var i = 0; i < data.length; i++){ 
-                LoadVars.array_list_Almacenes[data[i]["id"]] = {id_TipoAlmacen: data[i]["id_TipoAlmacen"]}
+                LoadVars.array_list_Almacenes[data[i]["id"]] = data[i]["id_TipoAlmacen"];
                 strTd += '<tr>';
                 strTd += CreateTd(data[i]["cod_Almacen"], "left");
                 strTd += CreateTd(data[i]["NombreAlmacen"], "left");
@@ -28,21 +28,19 @@
         });
     }
 
-    LoadFunctions.list_DistribuidoraUpdate = function(){
-        Ajax("list_DistribuidoraUpdate", LoadVars, function(data){
-            $("#txt_NameSiloUp").val(data[0]["Nombre"]);
-            $("#txt_DireccionSiloUp").val(data[0]["Direccion"]);
-            $("#txt_TelefonoSiloUp").val("0" + data[0]["Telefono"]);
-            $("#txt_EmailSiloUp").val( data[0]["Correo"]);
-            $("#txt_NameSiloUp, #txt_NameSiloUp, #txt_DireccionSiloUp, #txt_TelefonoSiloUp, #txt_EmailSiloUp").change()
+    LoadFunctions.list_SiloAlmacenUpdate = function(){
+        Ajax("list_SiloAlmacenUpdate", LoadVars, function(data){
+            $("#txt_NameAlmacenUp").val(data[0]["NombreAlmacen"]);
+            $("#txt_NameAlmacenUp").change();
+            LoadFunctions.list_SiloAlmacenTipo("cmb-TipoAlmacenUp", LoadVars.id_TipoAlmacen);
             $('#M-Insert-1').modal('show');
         });
     }
 
-    LoadFunctions.update_Distribuidora = function(){
-        Ajax("update_Distribuidora", LoadVars, function(data){
-            $('#M-Insert-1').modal('hide');
-            LoadFunctions.list_MaestroDistribuidoras();
+    LoadFunctions.update_SiloAlmacen = function(){
+        Ajax("update_SiloAlmacen", LoadVars, function(data){
+            LoadFunctions.list_SiloAlmacenes();
+            $('#M-Insert-1').modal('hide');            
         }, true);
     }
 })(window);

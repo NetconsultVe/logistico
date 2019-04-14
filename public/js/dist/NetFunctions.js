@@ -100,14 +100,14 @@
         })
     };
 
-    LoadFunctions.list_AlmacenTipo = function(a, b){
+    LoadFunctions.list_SiloAlmacenTipo = function(a, b){
         if(b == undefined || b == null){
             var str_opcion = '<option value="" disabled selected >SELECCIONE UNA OPCIÓN</option>';
         }else{
             var str_opcion = '<option value="" disabled >SELECCIONE UNA OPCIÓN</option>';
         }
         var elem = document.getElementById(a);
-        Ajax("list_AlmacenTipo", LoadVars, function(c){
+        Ajax("list_SiloAlmacenTipo", LoadVars, function(c){
             for (var i = 0; i < c.length; i++) {
                 if(b == c[i]["id"]){
                     str_opcion += '<option value ="' + c[i]["id"] + '" selected >' + c[i]["Nombre"] + "</option>";
