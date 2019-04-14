@@ -35,6 +35,11 @@
 		"jsSiloMaestro/Events.js",		
 		"jsSiloMaestro/Init.js"
 	],
+	"jsDistribuidoraMaestro":[
+		"jsDistribuidoraMaestro/Functions.js",
+		"jsDistribuidoraMaestro/Events.js",		
+		"jsDistribuidoraMaestro/Init.js"
+	],
 	"jsDistribucion":[
 		"jsDistribucion/Functions.js",
 		"jsDistribucion/Events.js",		

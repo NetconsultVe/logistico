@@ -11,6 +11,23 @@ use App\lp_distribuidora_almacenes_incorporacion;
 
 class DistribuidorasController extends Controller
 {
+    public function list_MaestroDistribuidoras(Request $a){
+        $str_Sql = "SELECT
+        lp_distribuidora.id,
+        lp_distribuidora.Nombre,
+        lp_distribuidora.Direccion,
+        lp_distribuidora.Correo,
+        lp_distribuidora.Telefono
+        FROM
+        lp_distribuidora";
+        return DB::select($str_Sql);
+    }
+
+
+
+
+
+
 
     public function list_Distribuidoras(Request $a){
         $str_Sql = $this->StrSqlNew('list_Distribuidoras', []);

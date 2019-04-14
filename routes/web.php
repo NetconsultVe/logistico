@@ -61,6 +61,10 @@ Route::get('/SiloMaestro', function(){
     return view('SiloMaestro.Index');
 });
 
+Route::get('/DistribuidoraMaestro', function(){    
+    return view('DistribuidoraMaestro.Index');
+});
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -93,6 +97,13 @@ route::post('list_RecepcionDistribuidora', 'DistribuidorasController@list_Recepc
 route::post('asig_RecepcionDistribuidora', 'DistribuidorasController@asig_RecepcionDistribuidora');
 route::post('list_AjusteInventario', 'DistribuidorasController@list_AjusteInventario');
 route::post('asig_MermaDistribuidora', 'DistribuidorasController@asig_MermaDistribuidora');
+route::post('list_MaestroDistribuidoras', 'DistribuidorasController@list_MaestroDistribuidoras');
+
+
+
+
+
+
 
 
 

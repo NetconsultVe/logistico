@@ -2,8 +2,8 @@
     <li class="header">MENU DE OPERACIONES</li>
     <li class="treeview"><a href="home"><i class="fa fa-home"></i><span class="fontMenu">DASHBOARD</span></a></li>
     <li class="treeview"><a href="SiloMaestro"><i class="fa fa-angle-right"></i><span class="fontMenu">SILOS</span></a></li>
-    {{--<li class="treeview"><a href="SiloMaestro"><i class="fa fa-angle-right"></i><span class="fontMenu">DISTRIBUIDORA</span></a></li>
-    <li class="treeview"><a href="#"><i class="fa fa-angle-right"></i><span class="fontMenu">PANADERIAS</span></a></li> --}}
+    <li class="treeview"><a href="DistribuidoraMaestro"><i class="fa fa-angle-right"></i><span class="fontMenu">DISTRIBUIDORA</span></a></li>
+    {{--<li class="treeview"><a href="#"><i class="fa fa-angle-right"></i><span class="fontMenu">PANADERIAS</span></a></li> --}}
     {{-- <li class="treeview"><a href="ReversoAsignacion"><i class="fa fa-angle-right"></i><span class="fontMenu">REVERSO DE ASIGNACIONES</span></a></li> --}}
     <li class="treeview"><a href="SilosRecarga"><i class="fa fa-angle-right"></i><span class="fontMenu">RECARGA DE SILOS</span></a></li>
     <li class="treeview"><a href="Distribucion"><i class="fa fa-angle-right"></i><span class="fontMenu">DISTRIBUCION</span></a></li>

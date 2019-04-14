@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Servidor
-Source Server Version : 50505
-Source Host           : localhost:3306
+Source Server         : ServerNuve
+Source Server Version : 50562
+Source Host           : 159.203.13.50:3306
 Source Database       : netconsu_logisticopanaderia
 
 Target Server Type    : MYSQL
-Target Server Version : 50505
+Target Server Version : 50562
 File Encoding         : 65001
 
-Date: 2019-04-13 22:58:39
+Date: 2019-04-12 16:38:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1723,19 +1723,18 @@ CREATE TABLE `lp_silo` (
   `Direccion` varchar(255) DEFAULT NULL,
   `Telefono` double DEFAULT NULL,
   `Correo` varchar(255) DEFAULT NULL,
-  `id_Responsable` int(11) DEFAULT NULL,
+  `Responsable` varchar(255) DEFAULT NULL,
+  `TelResponsable` double DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of lp_silo
 -- ----------------------------
-INSERT INTO `lp_silo` VALUES ('1', 'SILO 1', 'DIRECCION', '4245116999', 'EMAIL@GMAIL.COM', '2', null, null);
-INSERT INTO `lp_silo` VALUES ('2', 'SILO 2', 'DIRECCION', '4245116999', 'EMAIL@GMAIL.COM', '1', null, null);
-INSERT INTO `lp_silo` VALUES ('3', 'SILO 3', 'FINAL CALLE 15 LA FE', '4245116999', 'correo@dominio.com', '2', '2019-04-14 00:27:20', '2019-04-14 00:27:20');
-INSERT INTO `lp_silo` VALUES ('4', 'SILO 4', 'direccion 4', '4245116999', 'correo@dominio.com', '1', '2019-04-14 00:47:47', '2019-04-14 00:47:47');
+INSERT INTO `lp_silo` VALUES ('1', 'SILO 1', 'DIRECCION', '4245116999', 'EMAIL@GMAIL.COM', 'JONTATHAN JIMENEZ', '4245116999', null, null);
+INSERT INTO `lp_silo` VALUES ('2', 'SILO 2', 'DIRECCION', '4245116999', 'EMAIL@GMAIL.COM', 'JONTATHAN JIMENEZ', '4245116999', null, null);
 
 -- ----------------------------
 -- Table structure for `lp_silo_almacenes`
@@ -1808,27 +1807,6 @@ CREATE TABLE `lp_silo_almacenes_tipo` (
 -- ----------------------------
 INSERT INTO `lp_silo_almacenes_tipo` VALUES ('1', 'Almacen de Mateia Prima');
 INSERT INTO `lp_silo_almacenes_tipo` VALUES ('2', 'Almacen de Producto Terminado');
-
--- ----------------------------
--- Table structure for `lp_silo_responsable`
--- ----------------------------
-DROP TABLE IF EXISTS `lp_silo_responsable`;
-CREATE TABLE `lp_silo_responsable` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(255) DEFAULT NULL,
-  `Cedula` double DEFAULT NULL,
-  `TelefonoPpal` double DEFAULT NULL,
-  `Email` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of lp_silo_responsable
--- ----------------------------
-INSERT INTO `lp_silo_responsable` VALUES ('1', 'Gregory Jimenez', '13505266', '4122628486', 'gregoryjimenez@gmail.com', null, null);
-INSERT INTO `lp_silo_responsable` VALUES ('2', 'Luz Lozada', '122457770', '4162628486', 'luzlozada@gmail.com', null, null);
 
 -- ----------------------------
 -- Table structure for `migrations`
