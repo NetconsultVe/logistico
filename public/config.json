@@ -50,6 +50,11 @@
 		"jsSiloAlmacen/Events.js",		
 		"jsSiloAlmacen/Init.js"
 	],
+	"jsDistribuidoraAlmacen":[
+		"jsDistribuidoraAlmacen/Functions.js",
+		"jsDistribuidoraAlmacen/Events.js",		
+		"jsDistribuidoraAlmacen/Init.js"
+	],
 	"jsRecepcionProductos":[
 		"jsRecepcionProductos/Functions.js",
 		"jsRecepcionProductos/Events.js",		

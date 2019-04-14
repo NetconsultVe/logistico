@@ -7,7 +7,7 @@
         <a href="#" class="aTree"><i class="fa fa-angle-right"></i><span class="fontMenu">ALMACENES</span></a>
         <ul class="treeview-menu">
             <li class="treeview"><a href="SiloAlmacen"><i class="fa fa-angle-double-right"></i><span class="fontMenu">SILOS</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-angle-double-right"></i><span class="fontMenu">DISTRIBUIDORAS</span></a></li>
+            <li class="treeview"><a href="DistribuidoraAlmacen"><i class="fa fa-angle-double-right"></i><span class="fontMenu">DISTRIBUIDORAS</span></a></li>
         </ul>
     </li>
     <li class="treeview">

@@ -100,6 +100,28 @@
         })
     };
 
+
+    LoadFunctions.list_Distribuidoras = function(a, b){
+        if(b == undefined || b == null){
+            var str_opcion = '<option value="" disabled selected >SELECCIONE UNA OPCIÓN</option>';
+        }else{
+            var str_opcion = '<option value="" disabled >SELECCIONE UNA OPCIÓN</option>';
+        }
+        var elem = document.getElementById(a);
+        Ajax("list_Distribuidoras", LoadVars, function(c){            
+            for (var i = 0; i < c.length; i++) {
+                if(b == c[i]["id"]){
+                    str_opcion += '<option value ="' + c[i]["id"] + '" selected >' + c[i]["NombreDistribuidora"] + "</option>";
+                    LoadVars[elem["name"]] = c[i]["id"];
+                }else{
+                    str_opcion += '<option value ="' + c[i]["id"] + '">' + c[i]["NombreDistribuidora"] + "</option>";
+                }
+            }
+            $(elem).empty();
+            $(elem).html(str_opcion); 
+        })
+    };
+
     LoadFunctions.list_SiloAlmacenTipo = function(a, b){
         if(b == undefined || b == null){
             var str_opcion = '<option value="" disabled selected >SELECCIONE UNA OPCIÓN</option>';
@@ -141,19 +163,6 @@
         Ajax("list_Productos", LoadVars, function(c){            
             for (var i = 0; i < c.length; i++) {
                 str_opcion += '<option value ="' + c[i]["id_productos_presentacion"] + '">' + c[i]["Nombre"] + " - " + c[i]["Presentacion"] + " DE " + c[i]["PesoKg"] + " Kg." +"</option>";
-            }
-            $(elem).empty();
-            $(elem).html(str_opcion); 
-        })
-    };
-
-    LoadFunctions.list_Distribuidoras = function(a, b){
-        var str_opcion = '<option value="" disabled selected>SELECCIONE UNA OPCIÓN</option>';
-        var elem = document.getElementById(a);
-        LoadVars.id_ProductosTipo = b;
-        Ajax("list_Distribuidoras", LoadVars, function(c){            
-            for (var i = 0; i < c.length; i++) {
-                str_opcion += '<option value ="' + c[i]["id"] + '">' + c[i]["NombreDistribuidora"] + "</option>";
             }
             $(elem).empty();
             $(elem).html(str_opcion); 

@@ -69,6 +69,9 @@ Route::get('/SiloAlmacen', function(){
     return view('SiloAlmacen.Index');
 });
 
+Route::get('/DistribuidoraAlmacen', function(){    
+    return view('DistribuidoraAlmacen.Index');
+});
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -141,8 +144,10 @@ route::post('list_SiloAlmacenes', 'AlmacenesController@list_SiloAlmacenes');
 route::post('new_SiloAlmacen', 'AlmacenesController@new_SiloAlmacen');
 route::post('list_SiloAlmacenUpdate', 'AlmacenesController@list_SiloAlmacenUpdate');
 route::post('update_SiloAlmacen', 'AlmacenesController@update_SiloAlmacen');
+route::post('list_DistribuidoraAlmacenes', 'AlmacenesController@list_DistribuidoraAlmacenes');
+route::post('update_DistAlmacen', 'AlmacenesController@update_DistAlmacen');
+route::post('new_DistAlmacen', 'AlmacenesController@new_DistAlmacen');
 
 
 
 
- 

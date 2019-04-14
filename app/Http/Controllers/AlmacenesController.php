@@ -5,10 +5,21 @@ use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
 use App\lp_silo_almacenes;
+use App\lp_distribuidora_almacenes;
 
 
 class AlmacenesController extends Controller
 {
+
+    public function new_DistAlmacen(Request $a){
+        $Codigo = "Cod-001";
+        $lp_silo = lp_distribuidora_almacenes::create([
+            'id_Distribuidora' => $a->id_Distribuidora,
+            'cod_Almacen' => $Codigo,
+            'NombreAlmacen' => $a->NameAlmacen
+           ]);
+           return $lp_silo;
+    }
 
     public function new_SiloAlmacen(Request $a){
         $Codigo = "Cod-001";
@@ -58,10 +69,29 @@ class AlmacenesController extends Controller
         return DB::select($str_Sql);
     }
 
+    public function list_DistribuidoraAlmacenes(Request $a){
+        $str_Sql = "SELECT
+        lp_distribuidora_almacenes.cod_Almacen,
+        lp_distribuidora_almacenes.NombreAlmacen,
+        lp_distribuidora_almacenes.id
+        FROM
+        lp_distribuidora_almacenes
+        WHERE
+        lp_distribuidora_almacenes.id_Distribuidora = ".$a->id_Distribuidora;
+        return DB::select($str_Sql);
+    }
+
     public function update_SiloAlmacen(Request $a){
         $resp = DB::table('lp_silo_almacenes')->where('id', $a->id_Almacen)->update([
             'NombreAlmacen' => $a->NameAlmacenUp,
             'id_TipoAlmacen' => $a->id_TipoAlmacenUp
+        ]);
+        return $resp;
+    }
+
+    public function update_DistAlmacen(Request $a){
+        $resp = DB::table('lp_distribuidora_almacenes')->where('id', $a->id_Almacen)->update([
+            'NombreAlmacen' => $a->NameAlmacenUp
         ]);
         return $resp;
     }
