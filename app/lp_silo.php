@@ -12,7 +12,6 @@ class lp_silo extends Model
         'Direccion',
         'Telefono',
         'Correo',
-        'Responsable',
-        'TelResponsable' 
+        "id_Responsable"
     ];
 }

@@ -72,6 +72,7 @@ route::post('list_SiloRegistroRecarga', 'SiloController@list_SiloRegistroRecarga
 route::post('update_SiloMerma', 'SiloController@update_SiloMerma');
 route::post('update_SiloManufactura', 'SiloController@update_SiloManufactura');
 route::post('inst_SiloRecarga', 'SiloController@inst_SiloRecarga');
+route::post('new_Silo', 'SiloController@new_Silo');
 
 
 

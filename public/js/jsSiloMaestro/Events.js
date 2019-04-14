@@ -9,8 +9,8 @@
             "#cmb-responsable"
         ])){return}
         if(EmailCheck("#txt_EmailSilo")){return}
-
-        console.log("despues del check");
+        if(PhoneCheck("#txt_TelefonoSilo")){return}
+        LoadFunctions.new_Silo();
 
     })
 

@@ -46,6 +46,15 @@
             var a = this["value"].replace(",", ".");
             window.LoadVars[this["name"]] = Number(a).toFixed(2);
         }
+        if($(this).hasClass('PhoneCelular')){
+            var a = this["value"].replace("(", "");
+            var a = a.replace(")", "");
+            var a = a.replace("-", "");
+            var a = a.replace("___", "");
+            var a = a.replace("_______", "");
+            var a = a.replace(" ", "");
+            window.LoadVars[this["name"]] = a;
+        }
     });
 
     $(".PhoneCelular").inputmask({"mask": "(9999) 999-9999"});
@@ -61,6 +70,7 @@
             } else {
                 $(elem).val($(elem).val() + "@");
             }
+            $(elem).change();
         }
     });
 
@@ -189,6 +199,17 @@
 		var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
 		if(regex.test($(a).val()) == false){
             Notify("EL FORMATO DEL CORREO NO ES EL CORRECTO.", "danger");
+            $(a).css("border-color","red");
+			swControl = true;
+        }
+        return swControl; 
+    };
+
+    win.PhoneCheck = function(a){
+        var swControl = false;
+        var b = LoadVars[$(a)[0]["name"]];
+		if(b.length < 11 || b[0] !== "0"){
+            Notify("EL FORMATO DEL TELEFONO NO ES EL CORRECTO.", "danger");
             $(a).css("border-color","red");
 			swControl = true;
         }

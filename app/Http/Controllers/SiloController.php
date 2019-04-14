@@ -1,12 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\lp_Silo;
 use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
 
 class SiloController extends Controller
 {
+
+    public function new_Silo(Request $a){
+        $lp_silo = lp_silo::create([
+            'Nombre' => $a->NameSilo,
+            'Direccion' => $a->DireccionSilo,
+            'Telefono' => $a->TelefonoSilo,
+            'Correo' => $a->EmailSilo,
+            'id_Responsable'=>$a->id_Responsable
+           ]);
+           return $lp_silo;
+    }
    
     public function list_Silo(){
         return DB::select("call list_Silo");
