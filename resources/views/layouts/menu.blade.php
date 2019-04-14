@@ -13,8 +13,8 @@
     <li class="treeview">
         <a href="#" class="aTree"><i class="fa fa-angle-right"></i><span class="fontMenu">RESPONSABLES</span></a>
         <ul class="treeview-menu">
-            <li class="treeview"><a href="#"><i class="fa fa-angle-double-right"></i><span class="fontMenu">SILOS</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-angle-double-right"></i><span class="fontMenu">DISTRIBUIDORAS</span></a></li>
+            <li class="treeview"><a href="SiloResponsable"><i class="fa fa-angle-double-right"></i><span class="fontMenu">SILOS</span></a></li>
+            <li class="treeview"><a href="OrdenResponsable"><i class="fa fa-angle-double-right"></i><span class="fontMenu">ORDEN DE OPERACIONES</span></a></li>
         </ul>
     </li>
     <li class="treeview"><a href="SilosRecarga"><i class="fa fa-angle-right"></i><span class="fontMenu">RECARGA DE SILOS</span></a></li>

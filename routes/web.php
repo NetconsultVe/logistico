@@ -73,6 +73,14 @@ Route::get('/DistribuidoraAlmacen', function(){
     return view('DistribuidoraAlmacen.Index');
 });
 
+Route::get('/SiloResponsable', function(){    
+    return view('SiloResponsable.Index');
+});
+
+Route::get('/OrdenResponsable', function(){    
+    return view('OrdenResponsable.Index');
+});
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -151,3 +159,10 @@ route::post('new_DistAlmacen', 'AlmacenesController@new_DistAlmacen');
 
 
 
+route::post('list_SiloResponsables', 'SiloResponsableController@list_SiloResponsables');
+route::post('update_SiloResponsable', 'SiloResponsableController@update_SiloResponsable');
+route::post('new_SiloResponsable', 'SiloResponsableController@new_SiloResponsable');
+
+route::post('list_OrdenResponsables', 'SiloResponsableController@list_OrdenResponsables');
+route::post('update_OrdenResponsable', 'SiloResponsableController@update_OrdenResponsable');
+route::post('new_OrdenResponsable', 'SiloResponsableController@new_OrdenResponsable');

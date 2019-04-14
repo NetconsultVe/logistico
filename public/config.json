@@ -35,6 +35,16 @@
 		"jsSiloMaestro/Events.js",		
 		"jsSiloMaestro/Init.js"
 	],
+	"jsSiloResponsable":[
+		"jsSiloResponsable/Functions.js",
+		"jsSiloResponsable/Events.js",		
+		"jsSiloResponsable/Init.js"
+	],
+	"jsOrdenResponsable":[
+		"jsOrdenResponsable/Functions.js",
+		"jsOrdenResponsable/Events.js",		
+		"jsOrdenResponsable/Init.js"
+	],
 	"jsDistribuidoraMaestro":[
 		"jsDistribuidoraMaestro/Functions.js",
 		"jsDistribuidoraMaestro/Events.js",		
