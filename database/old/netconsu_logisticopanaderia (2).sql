@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-04-14 01:25:33
+Date: 2019-04-13 22:58:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1426,18 +1426,15 @@ CREATE TABLE `lp_distribuidora` (
   `Direccion` varchar(255) DEFAULT NULL,
   `Correo` varchar(255) DEFAULT NULL,
   `Telefono` double DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of lp_distribuidora
 -- ----------------------------
-INSERT INTO `lp_distribuidora` VALUES ('1', 'SISECA', 'DIRECCION2', 'EMAIL@GMAIL.COM', '4245116998', null, null);
-INSERT INTO `lp_distribuidora` VALUES ('2', 'RESERVA ACTIVA', 'DIRECCION 15', 'jj@GMAIL.COM', '4245136047', null, null);
-INSERT INTO `lp_distribuidora` VALUES ('3', 'ABASTLARA', 'DIRECCION', 'correo@dominio.com', '4245116999', null, null);
-INSERT INTO `lp_distribuidora` VALUES ('4', 'DISTRIBUIDORA 57', 'CARRERA 25', 'correo@dominio.com', '4245976762', '2019-04-14 04:09:34', '2019-04-14 04:09:34');
+INSERT INTO `lp_distribuidora` VALUES ('1', 'SISECA', 'DIRECCION', 'EMAIL@GMAIL.COM', '424511699');
+INSERT INTO `lp_distribuidora` VALUES ('2', 'RESERVA ACTIVA', 'DIRECCION', 'EMAIL@GMAIL.COM', '424511699');
+INSERT INTO `lp_distribuidora` VALUES ('3', 'ABASTLARA', 'DIRECCION', 'EMAIL@GMAIL.COM', '424511699');
 
 -- ----------------------------
 -- Table structure for `lp_distribuidora_almacenes`
@@ -1753,7 +1750,7 @@ CREATE TABLE `lp_silo_almacenes` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of lp_silo_almacenes
@@ -1762,10 +1759,6 @@ INSERT INTO `lp_silo_almacenes` VALUES ('1', '1', '1-11', 'ALMACEN MATERIA PRIMA
 INSERT INTO `lp_silo_almacenes` VALUES ('2', '1', '11-22', 'ALMACEN PRODUCTO TERMINADO', '2', null, null);
 INSERT INTO `lp_silo_almacenes` VALUES ('3', '2', '1-77', 'ALMACEN MATERIA PRIMA', '1', null, null);
 INSERT INTO `lp_silo_almacenes` VALUES ('4', '2', '1-88', 'ALMACEN PRODUCTO TERMINADO', '2', null, null);
-INSERT INTO `lp_silo_almacenes` VALUES ('5', '1', 'Cod-001', 'ALMACEN-22', '1', '2019-04-14 05:41:10', '2019-04-14 05:41:10');
-INSERT INTO `lp_silo_almacenes` VALUES ('6', '1', 'Cod-001', 'ALMACEN 54', '1', '2019-04-14 05:43:33', '2019-04-14 05:43:33');
-INSERT INTO `lp_silo_almacenes` VALUES ('7', '1', 'Cod-001', 'ALMA-TER', '2', '2019-04-14 05:45:03', '2019-04-14 05:45:03');
-INSERT INTO `lp_silo_almacenes` VALUES ('8', '1', 'Cod-001', 'ALMA-TER 01', '2', '2019-04-14 05:45:44', '2019-04-14 05:45:44');
 
 -- ----------------------------
 -- Table structure for `lp_silo_almacenes_incorporacion`
@@ -1813,7 +1806,7 @@ CREATE TABLE `lp_silo_almacenes_tipo` (
 -- ----------------------------
 -- Records of lp_silo_almacenes_tipo
 -- ----------------------------
-INSERT INTO `lp_silo_almacenes_tipo` VALUES ('1', 'Almacen de Materia Prima');
+INSERT INTO `lp_silo_almacenes_tipo` VALUES ('1', 'Almacen de Mateia Prima');
 INSERT INTO `lp_silo_almacenes_tipo` VALUES ('2', 'Almacen de Producto Terminado');
 
 -- ----------------------------

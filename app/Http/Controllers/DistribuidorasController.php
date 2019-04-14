@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;
+use App\lp_distribuidora;
 use App\lp_distribuidora_asignacion;
 use App\lp_silo_almacenes_incorporacion;
 use App\lp_distribuidora_almacenes_incorporacion;
@@ -23,10 +24,37 @@ class DistribuidorasController extends Controller
         return DB::select($str_Sql);
     }
 
+    public function list_DistribuidoraUpdate(Request $a){
+        $str_Sql = "SELECT
+        lp_distribuidora.Nombre,
+        lp_distribuidora.Direccion,
+        lp_distribuidora.Correo,
+        lp_distribuidora.Telefono
+        FROM
+        lp_distribuidora
+        WHERE
+        lp_distribuidora.id = ".$a->id_Distribuidora;
+        return DB::select($str_Sql);
+    }
 
-
-
-
+    public function update_Distribuidora(Request $a){
+        $resp = DB::table('lp_distribuidora')->where('id', $a->id_Distribuidora)->update([
+            'Nombre' => $a->NameSiloUp,
+            'Direccion' => $a->DireccionSiloUp,
+            'Telefono' => $a->TelefonoSiloUp,
+            'Correo' => $a->EmailSiloUp
+        ]);
+        return $resp;
+    }
+    public function new_Distribuidora(Request $a){
+        $lp_silo = lp_distribuidora::create([
+            'Nombre' => $a->NameSilo,
+            'Direccion' => $a->DireccionSilo,
+            'Telefono' => $a->TelefonoSilo,
+            'Correo' => $a->EmailSilo
+           ]);
+           return $lp_silo;
+    }
 
 
     public function list_Distribuidoras(Request $a){

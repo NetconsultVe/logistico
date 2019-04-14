@@ -65,6 +65,11 @@ Route::get('/DistribuidoraMaestro', function(){
     return view('DistribuidoraMaestro.Index');
 });
 
+Route::get('/SiloAlmacen', function(){    
+    return view('SiloAlmacen.Index');
+});
+
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -98,6 +103,9 @@ route::post('asig_RecepcionDistribuidora', 'DistribuidorasController@asig_Recepc
 route::post('list_AjusteInventario', 'DistribuidorasController@list_AjusteInventario');
 route::post('asig_MermaDistribuidora', 'DistribuidorasController@asig_MermaDistribuidora');
 route::post('list_MaestroDistribuidoras', 'DistribuidorasController@list_MaestroDistribuidoras');
+route::post('list_DistribuidoraUpdate', 'DistribuidorasController@list_DistribuidoraUpdate');
+route::post('update_Distribuidora', 'DistribuidorasController@update_Distribuidora');
+route::post('new_Distribuidora', 'DistribuidorasController@new_Distribuidora');
 
 
 
@@ -124,5 +132,14 @@ route::post('asing_DespachoPanaderia', 'OrdenOperacionesController@asing_Despach
 route::post('list_Notificacion', 'OrdenOperacionesController@list_Notificacion');
 route::post('noti_CelDespachoPanaderia', 'OrdenOperacionesController@noti_CelDespachoPanaderia');
 route::post('entrega_PanaderiaDespacho', 'OrdenOperacionesController@entrega_PanaderiaDespacho');
+
+
+
+
+route::post('list_AlmacenTipo', 'AlmacenesController@list_AlmacenTipo');
+route::post('list_Almacenes', 'AlmacenesController@list_Almacenes');
+route::post('new_Almacen', 'AlmacenesController@new_Almacen');
+
+
 
 

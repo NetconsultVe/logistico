@@ -1,20 +1,24 @@
 ;(function(win){
-    LoadFunctions.new_Distribuidora = function(){
-        Ajax("new_Distribuidora", LoadVars, function(data){
+    LoadFunctions.new_Almacen = function(){
+        Ajax("new_Almacen", LoadVars, function(data){
             InitControl();
-            LoadFunctions.list_MaestroDistribuidoras();
+            LoadFunctions.list_Silo("cmb-silo");
+            LoadFunctions.list_AlmacenTipo("cmb-TipoAlmacen");
+            $("#tableSilosRecarga").dataTable().fnDestroy();
+            $("#tableSilosRecarga tbody").empty();
         }, true);
     }
 
-    LoadFunctions.list_MaestroDistribuidoras = function(){
-        Ajax("list_MaestroDistribuidoras", LoadVars, function(data){
+    LoadFunctions.list_Almacenes = function(){
+        Ajax("list_Almacenes", LoadVars, function(data){
+            LoadVars.array_list_Almacenes = [];
             var strTd = "";
-            for(var i = 0; i < data.length; i++){  
+            for(var i = 0; i < data.length; i++){ 
+                LoadVars.array_list_Almacenes[data[i]["id"]] = {id_TipoAlmacen: data[i]["id_TipoAlmacen"]}
                 strTd += '<tr>';
-                strTd += CreateTd(data[i]["Nombre"], "left");
-                strTd += CreateTd(data[i]["Direccion"], "left");
-                strTd += CreateTd("0" + data[i]["Telefono"], "center");
-                strTd += CreateTd(data[i]["Correo"], "left");
+                strTd += CreateTd(data[i]["cod_Almacen"], "left");
+                strTd += CreateTd(data[i]["NombreAlmacen"], "left");
+                strTd += CreateTd(data[i]["TipoAlmacen"], "center");
                 strTd += '<td style="text-align: center;">';
                 strTd += '<button type="button" data-toggle="tooltip" title="EDITAR" class="btn btn-primary btn-flat" id="btn_EditarDistribuidora"><i class="fa fa-pencil-square-o" id =' + data[i]["id"] + '></i></button>';
                 strTd += '</td>';

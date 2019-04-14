@@ -47,12 +47,12 @@
             window.LoadVars[this["name"]] = Number(a).toFixed(2);
         }
         if($(this).hasClass('PhoneCelular')){
-            var a = this["value"].replace("(", "");
+            var a = this["value"];
+            var a = a.replace("(", "");
             var a = a.replace(")", "");
             var a = a.replace("-", "");
-            var a = a.replace("___", "");
-            var a = a.replace("_______", "");
-            var a = a.replace(" ", "");
+            var a = a.replace(" ", "");            
+            var a = a.replace(/_+/, "");
             window.LoadVars[this["name"]] = a;
         }
     });
@@ -74,12 +74,47 @@
         }
     });
 
-    LoadFunctions.list_Silo = function(a){
-        var str_opcion = '<option value="" disabled selected>SELECCIONE UNA OPCIÓN</option>';
+    $('.aTree').click(function(){
+        var ulMenu = $(this).parent().children('ul').get(0)
+        $(ulMenu).slideToggle();
+    })
+
+    LoadFunctions.list_Silo = function(a,b){
+        if(b == undefined || b == null){
+            var str_opcion = '<option value="" disabled selected >SELECCIONE UNA OPCIÓN</option>';
+        }else{
+            var str_opcion = '<option value="" disabled >SELECCIONE UNA OPCIÓN</option>';
+        }
         var elem = document.getElementById(a);
-        Ajax("list_Silo", LoadVars, function(b){
-            for (var i = 0; i < b.length; i++) {
-                str_opcion += '<option value ="' + b[i]["id"] + '">' + b[i]["Nombre"] + "</option>";
+        Ajax("list_Silo", LoadVars, function(c){
+            for (var i = 0; i < c.length; i++) {
+                if(b == c[i]["id"]){
+                    str_opcion += '<option value ="' + c[i]["id"] + '" selected >' + c[i]["Nombre"] + "</option>";
+                    LoadVars[elem["name"]] = c[i]["id"];
+                }else{
+                    str_opcion += '<option value ="' + c[i]["id"] + '">' + c[i]["Nombre"] + "</option>";
+                }
+            }
+            $(elem).empty();
+            $(elem).html(str_opcion); 
+        })
+    };
+
+    LoadFunctions.list_AlmacenTipo = function(a, b){
+        if(b == undefined || b == null){
+            var str_opcion = '<option value="" disabled selected >SELECCIONE UNA OPCIÓN</option>';
+        }else{
+            var str_opcion = '<option value="" disabled >SELECCIONE UNA OPCIÓN</option>';
+        }
+        var elem = document.getElementById(a);
+        Ajax("list_AlmacenTipo", LoadVars, function(c){
+            for (var i = 0; i < c.length; i++) {
+                if(b == c[i]["id"]){
+                    str_opcion += '<option value ="' + c[i]["id"] + '" selected >' + c[i]["Nombre"] + "</option>";
+                    LoadVars[elem["name"]] = c[i]["id"];
+                }else{
+                    str_opcion += '<option value ="' + c[i]["id"] + '">' + c[i]["Nombre"] + "</option>";
+                }
             }
             $(elem).empty();
             $(elem).html(str_opcion); 
