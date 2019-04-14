@@ -52,24 +52,26 @@
                 <table id="tableSilosRecarga" class="table" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>FECHA</th>
-                            <th>OPERACION</th>                            
-                            <th>MERMA (Kg)</th>
-                            <th>PRODUCTO</th>
-                            <th>EXISTENCIA (Ton)</th>
-                            <th>MANUFACTURA (Sacos)</th>
+                            <th>NOMBRE</th>
+                            <th>DIRECCION</th>                            
+                            <th>TELEFONO</th>
+                            <th>RESPONSABLE</th>
+                            <th>CEDULA</th>
+                            <th>TEFEFONO</th>
+                            <th>EMAIL</th>
                             <th id="thOperaciones">ACCION</th>             
                         </tr>
                     </thead>
                     <tbody></tbody>
                     <tfoot>
                         <tr>
-                            <th>FECHA</th>
-                            <th>OPERACION</th>                            
-                            <th>MERMA (Kg)</th>
-                            <th>PRODUCTO</th>
-                            <th>EXISTENCIA (Ton)</th>
-                            <th>MANUFACTURA (Sacos)</th>
+                            <th>NOMBRE</th>
+                            <th>DIRECCION</th>                            
+                            <th>TELEFONO</th>
+                            <th>RESPONSABLE</th>
+                            <th>CEDULA</th>
+                            <th>TEFEFONO</th>
+                            <th>EMAIL</th>
                             <th id="thOperaciones">ACCION</th>             
                         </tr>
                     </tfoot>
@@ -79,8 +81,7 @@
     </div>
 </div>
 
-@include('silos.Manufactura')
-@include('silos.Merma')
+@include('SiloMaestro.Editar')
 
 @endsection
 @section('script')

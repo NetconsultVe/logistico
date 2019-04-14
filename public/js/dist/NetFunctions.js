@@ -149,6 +149,27 @@
         })
     };
 
+    LoadFunctions.list_SiloResponsable = function(a, b){
+        if(b == undefined || b == null){
+            var str_opcion = '<option value="" disabled selected >SELECCIONE UNA OPCIÓN</option>';
+        }else{
+            var str_opcion = '<option value="" disabled >SELECCIONE UNA OPCIÓN</option>';
+        }
+        var elem = document.getElementById(a);
+        Ajax("list_SiloResponsable", LoadVars, function(c){            
+            for (var i = 0; i < c.length; i++) {
+                if(b == c[i]["id"]){
+                    str_opcion += '<option value ="' + c[i]["id"] + '" selected >' + c[i]["Nombre"] + "</option>";
+                    LoadVars[elem["name"]] = c[i]["id"];
+                }else{
+                    str_opcion += '<option value ="' + c[i]["id"] + '">' + c[i]["Nombre"] + "</option>";
+                }
+            }
+            $(elem).empty();
+            $(elem).html(str_opcion); 
+        })
+    };
+
     win.getToken = function(){
         var resp = "";
         Object.values(document.getElementsByTagName("meta")).forEach(function(a){

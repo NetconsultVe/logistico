@@ -73,6 +73,12 @@ route::post('update_SiloMerma', 'SiloController@update_SiloMerma');
 route::post('update_SiloManufactura', 'SiloController@update_SiloManufactura');
 route::post('inst_SiloRecarga', 'SiloController@inst_SiloRecarga');
 route::post('new_Silo', 'SiloController@new_Silo');
+route::post('list_Silos', 'SiloController@list_Silos');
+route::post('list_SiloResponsable', 'SiloController@list_SiloResponsable');
+route::post('list_SiloUpdate', 'SiloController@list_SiloUpdate');
+route::post('update_Silo', 'SiloController@update_Silo');
+
+
 
 
 

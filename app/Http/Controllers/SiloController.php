@@ -19,6 +19,54 @@ class SiloController extends Controller
            ]);
            return $lp_silo;
     }
+
+    public function update_Silo(Request $a){
+        $resp = DB::table('lp_silo')->where('id', $a->id_Silo)->update([
+            'Nombre' => $a->NameSiloUp,
+            'Direccion' => $a->DireccionSiloUp,
+            'Telefono' => $a->TelefonoSiloUp,
+            'Correo' => $a->EmailSiloUp,
+            'id_Responsable'=>$a->id_ResponsableUp
+        ]);
+        return $resp;
+    }
+
+    public function list_Silos(){
+        $str_Sql = "SELECT
+        lp_silo.id,
+        lp_silo.Nombre,
+        lp_silo.Direccion,
+        lp_silo.Telefono,
+        lp_silo_responsable.id AS idResponsable,
+        lp_silo_responsable.Nombre AS NombreResponsable,
+        lp_silo_responsable.Cedula AS CedulaResponsable,
+        lp_silo_responsable.TelefonoPpal AS TelefonoResponsable,
+        lp_silo_responsable.Email AS EmailResponsable
+        FROM lp_silo LEFT JOIN lp_silo_responsable ON lp_silo.id_Responsable = lp_silo_responsable.id";
+        return DB::select($str_Sql);
+    }
+
+    public function list_SiloUpdate(Request $a){
+        $str_Sql = "SELECT
+        lp_silo.Nombre,
+        lp_silo.Direccion,
+        lp_silo.Telefono,
+        lp_silo.Correo
+        FROM
+        lp_silo
+        WHERE
+        lp_silo.id = ".$a->id_Silo;
+        return DB::select($str_Sql);
+    }
+
+    public function list_SiloResponsable(){
+        $str_Sql = "SELECT
+        lp_silo_responsable.id,
+        lp_silo_responsable.Nombre
+        FROM
+        lp_silo_responsable";
+        return DB::select($str_Sql);
+    }
    
     public function list_Silo(){
         return DB::select("call list_Silo");
