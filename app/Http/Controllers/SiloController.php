@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\lp_Silo;
+use App\lp_silo;
 use Illuminate\Http\Request;
 use DB;
 use Carbon\Carbon;

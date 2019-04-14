@@ -22,7 +22,7 @@ Route::get('/clear-cache', function(){
     return redirect('login');   
 });
 Route::get('/SilosRecarga', function(){    
-    return view('silos.index');
+    return view('silos.Index');
 });
 
 Route::get('/Distribucion', function(){    
